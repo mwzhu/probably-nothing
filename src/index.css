@@ -1,13 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  font-family: "Serif roman", sans-serif;
+  font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* <--------------- Nav Bar ----------------> */
+#nav-bar-wrapper {
+  max-width: 1080px;
+  height: 170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-bar-right {
+  margin-top: 15px;
+}
+
+.nav-bar {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  margin: 0 2rem;
+  text-align: center;
+}
+
+.site-logo {
+  width: 32px;
+  height: 32px;
+  display: block;
+  overflow: visible;
+  border: 4px solid #000000;
+  position: relative;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease-in-out;
+  flex-shrink: 0;
+  box-sizing: content-box;
+  margin: 20px;
+}
+
+.site-logo .logo-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: transform 0.4s ease-in-out;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+.site-logo:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+  transition: transform 0.4s ease-in-out;
+}
+.site-logo:hover .logo-text {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center;
+}
+.site-logo:hover #logo-stroke {
+  transform: rotate(90deg);
+  transform-origin: center center;
+  transition: transform 0.5s ease-in-out;
 }
