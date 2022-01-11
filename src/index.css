@@ -9,53 +9,57 @@ html {
 
 /* <--------------- Nav Bar ----------------> */
 #nav-bar-wrapper {
-  max-width: 1080px;
-  height: 170px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 1.7rem;
+  height: 100px;
+  width: 100%;
+  align-items: flex-start;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #nav-bar-right {
-  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
 }
 
 .nav-bar {
-  font-weight: bold;
+  font-family: 'Lora', serif;
+  color: #323649;
+  font-size: 18px;
   text-decoration: none;
-  color: black;
-  margin: 0 2rem;
-  text-align: center;
+}
+
+.nav-bar.current {
+  text-decoration: line-through;
 }
 
 .site-logo {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   display: block;
   overflow: visible;
-  border: 4px solid #000000;
+  border: 3px solid #323649;
   position: relative;
   transform: rotate(0deg);
   transition: transform 0.4s ease-in-out;
   flex-shrink: 0;
   box-sizing: content-box;
   margin: 20px;
+  border-radius: 5%;
 }
 
 .site-logo .logo-text {
   position: absolute;
+  font-family: 'Lora', serif;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
   transition: transform 0.4s ease-in-out;
-  font-weight: bold;
-  font-size: 20px;
-  color: black;
+  font-size: 21px;
+  font-weight: 500;
+  color: #323649;
 }
 
 .site-logo:hover {
@@ -64,11 +68,13 @@ html {
   transition: transform 0.4s ease-in-out;
 }
 .site-logo:hover .logo-text {
+  opacity: 0.9;
   transform: translate(-50%, -50%) rotate(-90deg);
-  transform-origin: center;
+  transform-origin: center center;
+  transition: transform 0.4s ease-in-out;
 }
 .site-logo:hover #logo-stroke {
   transform: rotate(90deg);
   transform-origin: center center;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }

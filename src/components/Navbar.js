@@ -1,4 +1,5 @@
-import {React, Component} from 'react';
+import React, {Component} from 'react';
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
     constructor(props) {
@@ -8,17 +9,20 @@ class Navbar extends Component {
     componentDidMount() {
         document.querySelector('.current').classList.remove('current');
         switch(this.props.page) {
-            case "home":
-                document.getElementById('nav-home').classList.add('current');
+            case "about":
+                document.getElementById('nav-about').classList.add('current');
                 break;
             case "projects":
                 document.getElementById('nav-projects').classList.add('current');
                 break;
-            case "resume":
-                document.getElementById('nav-resume').classList.add('current');
+            case "work":
+                document.getElementById('nav-work').classList.add('current');
                 break;
-            case "contact":
-                document.getElementById('nav-contact').classList.add('current');
+            case "me":
+                document.getElementById('nav-me').classList.add('current');
+                break;
+            case "home":
+                document.getElementById('nav-home').classList.add('current');
                 break;
             default:
                 break;
@@ -27,15 +31,17 @@ class Navbar extends Component {
 
     render() {
         return (
-            <header id="nav-bar-wrapper"> 
-                <a className="site-logo" href="https://marcteoong.com/#/" target="_self" id="logo">  
+            <header id="nav-bar-wrapper">
+                <Link className="site-logo" to="/" id="logo">  
                     <span className="logo-text"> M </span>
-                </a>
+                </Link>
+
                 <div id="nav-bar-right">
-                <a className="nav-bar current" id="nav-home" href="https://marcteoong.com/#/" target="_self"> About </a>
-                <a className="nav-bar" id="nav-projects" href="https://marcteoong.com/#/projects" target="_self"> Projects </a>
-                <a className="nav-bar" id="nav-resume" href="https://marcteoong.com/#/resume" target="_self"> Resume </a>
-                <a className="nav-bar" id="nav-contact" href="https://marcteoong.com/#/contact" target="_self"> Contact </a>
+                    <Link className="nav-bar current" id="nav-home" to="/"> home </Link>
+                    <Link className="nav-bar" id="nav-about" to="/about"> about </Link>
+                    <Link className="nav-bar" id="nav-projects" to="/projects"> projects </Link>
+                    <Link className="nav-bar" id="nav-work" to="/work"> work </Link>
+                    <Link className="nav-bar" id="nav-me" to="/me"> me </Link>
                 </div>
             </header>
         );

@@ -1,0 +1,86 @@
+/* <--------------- Home ----------------> */
+.homepage {
+    margin: 70px;
+    font-family: 'Lora', serif;
+    color: #323649;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction {
+    margin-bottom: 5px;
+}
+
+.description {
+    margin-top: 15px;
+    display: flex;
+}
+
+.Typewriter__wrapper {
+    color: black;
+    margin-left: 7px;
+}
+
+.Typewriter__cursor {
+    font-size: 28px;
+}
+
+.noCursor {
+    display: none;
+}
+
+.emojiContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#emoji { 
+    width: 220px; 
+    height: 120px; 
+    font-size: 80px;
+    text-align: center;
+    animation-name: float;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.shadow {
+    width: 55px;
+    height: 10px;
+    background: #1c1c1c;		    
+    border-radius: 70%;
+    opacity: 0.50;
+    filter: blur(3px);
+    animation-name: animate-shadow;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes float {
+    
+    0% {
+        transform: translateY(0px);
+    } 100% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes animate-shadow {
+    
+    0% {
+        transform: scale(1);
+    } 100% {
+        transform: scale(1.2);
+    }
+}
