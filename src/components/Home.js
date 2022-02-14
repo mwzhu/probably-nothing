@@ -1,71 +1,70 @@
 import React, {Component} from 'react';
-import Typewriter from "typewriter-effect";
-import GraphemeSplitter from "grapheme-splitter";
 import './Home.css';
-import Navbar from './Navbar';
 
 class Home extends Component {
+    state = {
+      count: 1,
+    }
+
+    increment = () => {
+      this.setState((state) => {
+        if(state.count < 20) {
+          return {count: state.count + 1}
+        } else {
+          return {count: state.count}
+        }
+      });
+    }
+
+    decrement = () => {
+      this.setState((state) => {
+        if(state.count > 1) {
+          return {count: state.count - 1}
+        } else {
+          return {count: state.count}
+        }
+      });
+    }
+
+    handleChange = (event) => {
+      this.setState({state: event.target.value});
+    }
+  
     render() {
-        const stringSplitter = string => {
-            const splitter = new GraphemeSplitter();
-            return splitter.splitGraphemes(string);
-        };
-        return (
-            <div>
-                <Navbar page="home"/>
-                <div className="homepage">
-                    <div className="introduction">
-                        Hi, I'm Marc.
-                    </div>
-                    <div className="emojiContainer">
-                        <div id="emoji"> 
-                            <Typewriter
-                                options={{
-                                    cursorClassName: "noCursor",
-                                    loop: true,
-                                    delay: 0, 
-                                    deleteSpeed: 0,
-                                    stringSplitter}}
-                                onInit={(typewriter) => {
-                                    typewriter.typeString("💻")
-                                    .pauseFor(4800)
-                                    .deleteAll()
-                                    .typeString("₿")
-                                    .pauseFor(5600)
-                                    .deleteAll()
-                                    .typeString("🏋️")
-                                    .pauseFor(5000)
-                                    .deleteAll()
-                                    .typeString("🖼")
-                                    .pauseFor(4250)
-                                    .deleteAll()
-                                    .typeString("🐍")
-                                    .pauseFor(3700)
-                                    .deleteAll()
-                                    .typeString("🧥")
-                                    .pauseFor(4500)
-                                    .deleteAll()
-                                    .start();
-                                }}
-                            />
-                        </div>
-                        <div className="shadow"></div>
-                    </div>
-                    <div className="description">
-                        I'm a
-                        <Typewriter
-                            options={{
-                                strings: ['eager developer.', 'blockchain enthusiast.', 'nighttime gym rat.', 'nft collector.', 'Lakers fan.', 'weekend stylist.'],
-                                delay: 75,
-                                deleteSpeed: 70,
-                                pauseFor: 1800,
-                                autoStart: true,
-                                loop: true,
-                            }}
-                        />
-                    </div>
-                </div>
+      return (
+        <div>
+          <div className="homepage">
+            <h1 className="minted"> 333/1777</h1>
+            <div className="emojiContainer">
+            <div id="emoji"> 
+            ✉️
             </div>
+            </div>
+            <div className="shadow"></div>
+            <div className='mint-body'>
+            <div className="description">
+            <div className="invitation">
+              Party Invitation
+            </div>
+            <div className="congratulations">
+              Congratulations, you're the first one here.
+            </div>
+            <div className="price">
+              0.029 Ξ
+            </div>
+            </div>
+                <div className="amount">
+                    <button className="minmax" onClick={this.decrement}> - </button>
+                    <input className="num" type="text" value={this.state.count} onChange={this.handleChange} readOnly ></input>
+                    <button className="minmax" onClick={this.increment}> + </button>
+                </div>
+                <button className="mint"> MINT </button>
+            </div>
+          </div>
+          <div className="footer">
+          Twitter and discord to be launched after mint out, brace yourselves :)
+          </div>
+          </div>
         );
     }
 }

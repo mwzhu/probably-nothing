@@ -1,8 +1,7 @@
 /* <--------------- Home ----------------> */
 .homepage {
-    margin: 70px;
-    font-family: 'Lora', serif;
-    color: #323649;
+    font-family: "Fira Mono", monospace;
+    color: black;
     font-size: 30px;
     text-decoration: none;
     text-align: center;
@@ -10,24 +9,121 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 93vh;
 }
 
-.introduction {
-    margin-bottom: 5px;
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+.invitation {
+    margin-top: 35px;
+}
+
+.congratulations {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Fira Mono", monospace;
+    display: none;
+}
+
+.footer {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-family: "Fira Mono", monospace;
+}
+
+.price {
+    font-size: 40px;
+    margin-top: 30px;
 }
 
 .description {
-    margin-top: 15px;
+    font-size: 40px;
+}
+
+.minted {
+    margin-bottom: 15px;
+}
+
+.amount {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.num {
+    padding: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: none;
+    color: black;
+    font-size: 25px;
+    width: 100px;
+    text-align: center;
+}
+
+p{
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+
+.mint {
+    color: black;
+    font-size: 35px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.mint:hover {
+    font-weight: 700;
+}
+
+.minmax {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .Typewriter__wrapper {
-    color: black;
     margin-left: 7px;
+    color: black;
+}
+
+.emojiWrapper {
+    color: black;
 }
 
 .Typewriter__cursor {
-    font-size: 28px;
+    font-size: 35px;
+    color: black;
+    position: relative;
+    top: -5px;
 }
 
 .noCursor {
@@ -39,12 +135,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 35px;
 }
 
 #emoji { 
     width: 220px; 
-    height: 120px; 
-    font-size: 80px;
+    height: 210px; 
+    font-size: 165px;
     text-align: center;
     animation-name: float;
     animation-duration: 1s;
@@ -54,8 +151,8 @@
 }
 
 .shadow {
-    width: 55px;
-    height: 10px;
+    width: 110px;
+    height: 15px;
     background: #1c1c1c;		    
     border-radius: 70%;
     opacity: 0.50;
