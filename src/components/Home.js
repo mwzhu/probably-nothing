@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './Home.css';
 import {checkStatus, returnCount} from './Mint';
+import Typewriter from "typewriter-effect";
+import GraphemeSplitter from "grapheme-splitter";
 
 
 class Home extends Component {
@@ -49,23 +51,51 @@ class Home extends Component {
     }
   
     render() {
+      const stringSplitter = string => {
+        const splitter = new GraphemeSplitter();
+        return splitter.splitGraphemes(string);
+      };
       return (
         <div>
           <div className="homepage">
-            <h1 className="minted">/1999</h1>
+            <div className="warning">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: true,
+                  delay: 40, 
+                  deleteSpeed: 40,
+                  stringSplitter,
+                  strings: ["This is your first test.","Whitelists, bots, rug pulls, gas wars.", "Web 3.0 has been corrupted.", "We will create change.",
+                  "Those who are worthy can join us."]
+                }} 
+              />
+            </div>
             <div className="emojiContainer">
-            <div id="emoji"> 
-            ✉️
+              <div id="emoji"> 
+                <Typewriter
+                  options={{
+                    cursorClassName: "noCursor",
+                    wrapperClassName: "emojiWrapper",
+                    autoStart: true,
+                    loop: true,
+                    delay: 0, 
+                    deleteSpeed: 0,
+                    pauseFor: 400,
+                    stringSplitter,
+                    strings: ["🕹","🕛","📆","🕐","🦍","🕒","📗","🕔","🧭","🕙","🗺️","🕕","⛩️","🕛","💰", "🕘"],
+                  }} 
+                />
+              </div>
             </div>
-            </div>
-            <div className="shadow"></div>
             <div className='mint-body'>
             <div className="description">
+            <h1 className="minted">/1999</h1>
             <div className="invitation">
               Party Invitation
             </div>
             <div className="congratulations">
-              Congratulations, you're the first one here.
+              Players will need a party invitation and the riddle answer to participate in the second test. 
             </div>
             <div className="price">
               0.029 Ξ
@@ -80,11 +110,11 @@ class Home extends Component {
                       this.increment
                     }> + </button>
                 </div>
-                <button className="mint"> MINT </button>
+                <button className="mint">MINT</button>
             </div>
-          </div>
+          </div> 
           <div className="footer">
-          Twitter and discord to be launched after mint out, brace yourselves :)
+          Twitter and discord to be launched after mint out. Be ready.
           </div>
           </div>
         );

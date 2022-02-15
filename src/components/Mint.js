@@ -602,7 +602,7 @@ const checkStatus = async (mintButton, amount) => {
             onClickConnect(mintButton, amount);
          }
    } else {
-      mintButton.innerText = 'Mint';
+      mintButton.innerText = 'MINT';
       mintButton.onclick = () => {
          contract.methods.totalSupply().call().then(function(result) {
             if (Number(result) < 100) {
