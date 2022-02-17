@@ -15,74 +15,7 @@ html {
   box-sizing: border-box;
 }
 
-/* <--------------- Nav Bar ----------------> */
-#nav-bar-wrapper {
-  height: 100px;
-  width: 100%;
-  align-items: flex-start;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-#nav-bar-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 20px;
-}
-
-.nav-bar {
-  font-family: 'Lora', serif;
-  color: #323649;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-.nav-bar.current {
-  text-decoration: line-through;
-}
-
-.site-logo {
-  width: 40px;
-  height: 40px;
-  display: block;
-  overflow: visible;
-  border: 3px solid #323649;
-  position: relative;
-  transform: rotate(0deg);
-  transition: transform 0.4s ease-in-out;
-  flex-shrink: 0;
-  box-sizing: content-box;
-  margin: 20px;
-  border-radius: 5%;
-}
-
-.site-logo .logo-text {
-  position: absolute;
-  font-family: 'Lora', serif;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(0deg);
-  transition: transform 0.4s ease-in-out;
-  font-size: 21px;
-  font-weight: 500;
-  color: #323649;
-}
-
-.site-logo:hover {
-  opacity: 1;
-  transform: rotate(90deg);
-  transition: transform 0.4s ease-in-out;
-}
-.site-logo:hover .logo-text {
-  opacity: 0.9;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  transform-origin: center center;
-  transition: transform 0.4s ease-in-out;
-}
-.site-logo:hover #logo-stroke {
-  transform: rotate(90deg);
-  transform-origin: center center;
-  transition: transform 0.4s ease-in-out;
+body {
+  margin: 0px;
+  padding: 0px;
 }

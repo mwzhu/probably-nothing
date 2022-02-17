@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     height: 90vh;
+    font-weight: 500;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
@@ -143,3 +144,14 @@
         transform: translateY(20px);
     }
 }
+
+#video {
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    filter: saturate(50%) brightness(40%);
+    object-fit: cover;
+    margin: 0px;
+}
+

@@ -3,7 +3,7 @@ import './Home.css';
 import {checkStatus, returnCount} from './Mint';
 import Typewriter from "typewriter-effect";
 import GraphemeSplitter from "grapheme-splitter";
-
+import video from './video.mov';
 
 class Home extends Component {
     state = {
@@ -40,11 +40,6 @@ class Home extends Component {
       const mintButton = document.getElementsByClassName('mint')[0];
       const amount = Number(document.getElementsByClassName("num")[0].value);
       const minted = document.getElementsByClassName('minted')[0];
-  
-      // const input = document.querySelector('input');
-      // input.addEventListener('change', (e) => {  
-      //   checkStatus(mintButton, e.target.value);
-      // });
 
       returnCount(minted);
       checkStatus(mintButton, amount);
@@ -55,8 +50,12 @@ class Home extends Component {
         const splitter = new GraphemeSplitter();
         return splitter.splitGraphemes(string);
       };
+
       return (
         <div>
+          <video autoPlay loop muted id="video">
+            <source src={video}/>  
+          </video>
           <div className="homepage">
             <div className="warning">
               <Typewriter
